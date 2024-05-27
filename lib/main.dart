@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_task11/pages/home.dart';
+import 'package:flutter_application_task11/pages/rooms.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: HomePage(), routes: {'homeLink': (context) => HomePage(),
+      'roomsLink':(context) => RoomsPage(),},
     );
   }
 }
