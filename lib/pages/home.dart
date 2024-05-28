@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(8),
-          child: Scrollbar(
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 Image(
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                             TextStyle(fontSize: 10, color: Colors.lightBlue)),
                     IconButton(
                         onPressed: () async {
-                          var date = DateTime.now().add(Duration(days: 90));
+                          // var date = DateTime.now().add(Duration(days: 90));
                           var checkInResult = await showDatePicker(
                               context: context,
                               firstDate: DateTime(2023),
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                     adultValue = value;
                   });
                 }, 
-                min: 1, max: 6,),
+                min: 1, max: 6, divisions: 5, label: '$adultValue',),
                 ] ),
                  Row(children: [Text('Children:  $childValue', style: 
                 TextStyle(color: Colors.orange),),
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                     childValue = value;
                   });
                 }, 
-                min: 0, max: 6,),
+                min: 0, max: 6, divisions: 6, label: '$childValue',),
                 ] ),
                 HotelCheckBox(),
                 RadioButton(),
